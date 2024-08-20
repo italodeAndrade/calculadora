@@ -33,12 +33,17 @@ class MainActivity : AppCompatActivity() {
             textView.text = "Resultado: ${numero1 - numero2}"
         }
 
+        fun divide(textView: TextView,numero1: Double, numero2: Double) {
+            textView.text = "Resultado: ${numero1 / numero2}"
+        }
+
         val textView1 = findViewById<TextView>(R.id.textView)
         val editTextText1 = findViewById<EditText>(R.id.editTextText1)
         val editTextText2 = findViewById<EditText>(R.id.editTextText2)
         val button= findViewById<Button>(R.id.button)
         val button2 = findViewById<Button>(R.id.button2)
         val button3 = findViewById<Button>(R.id.button3)
+        val button4 = findViewById<Button>(R.id.button4)
 
         button.setOnClickListener{
             val numero1 = editTextText1.text.toString().toDoubleOrNull() ?: 0.0
@@ -56,6 +61,12 @@ class MainActivity : AppCompatActivity() {
             val numero1 = editTextText1.text.toString().toDoubleOrNull() ?: 0.0
             val numero2 = editTextText2.text.toString().toDoubleOrNull() ?: 0.0
             deduct(textView1,numero1,numero2)
+        }
+
+        button4.setOnClickListener{
+            val numero1 = editTextText1.text.toString().toDoubleOrNull() ?: 0.0
+            val numero2 = editTextText2.text.toString().toDoubleOrNull() ?: 0.0
+            divide(textView1,numero1,numero2)
         }
 
     }
